@@ -1,0 +1,9 @@
+{{outlet}}
+<strong> {{ model.name}}</strong> (total {{ model.publicRepos }})
+{{model.repos.length}}
+<ul>
+  {{#each model.repos as |repo|}}
+  <li>{{repo.fullName}} ({{repo.language}}, {{repo.stargazersCount}} stars)</li>
+  <button {{action 'star' repo}}>star</button>
+  {{/each}}
+</ul>
